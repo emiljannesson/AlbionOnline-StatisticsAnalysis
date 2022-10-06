@@ -1,18 +1,16 @@
-﻿using ReactiveUI;
-using StatisticsAnalysisTool.Avalonia.Settings;
-using System.Collections.ObjectModel;
-using System.Windows;
-using System.Windows.Data;
-using StatisticsAnalysisTool.Avalonia.Common.Comparer;
+﻿using Avalonia.Controls;
+using ReactiveUI;
 using StatisticsAnalysisTool.Avalonia.Models.NetworkModel;
 using StatisticsAnalysisTool.Avalonia.Network.Notification;
+using StatisticsAnalysisTool.Avalonia.Settings;
+using System.Collections.ObjectModel;
 
 namespace StatisticsAnalysisTool.Avalonia.Models.BindingModels;
 
 public class DungeonBindings : ReactiveObject
 {
     private ObservableCollection<DungeonNotificationFragment> _trackingDungeons = new();
-    private ListCollectionView? _trackingDungeonsCollectionView;
+    //private ListCollectionView? _trackingDungeonsCollectionView;
     private DungeonCloseTimer _dungeonCloseTimer = new();
     private DungeonStatsFilter _dungeonStatsFilter;
     private DungeonStats _dungeonStatsDay = new();
@@ -36,11 +34,11 @@ public class DungeonBindings : ReactiveObject
         set => this.RaiseAndSetIfChanged(ref _trackingDungeons, value);
     }
 
-    public ListCollectionView? TrackingDungeonsCollectionView
-    {
-        get => _trackingDungeonsCollectionView;
-        set => this.RaiseAndSetIfChanged(ref _trackingDungeonsCollectionView, value);
-    }
+    //public ListCollectionView? TrackingDungeonsCollectionView
+    //{
+    //    get => _trackingDungeonsCollectionView;
+    //    set => this.RaiseAndSetIfChanged(ref _trackingDungeonsCollectionView, value);
+    //}
 
     public DungeonCloseTimer DungeonCloseTimer
     {

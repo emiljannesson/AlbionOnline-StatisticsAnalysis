@@ -33,7 +33,7 @@ namespace StatisticsAnalysisTool.Avalonia.Common
         ///     Returns city item prices bye uniqueName, locations and qualities.
         /// </summary>
         /// <exception cref="TooManyRequestsException"></exception>
-        public static async Task<List<MarketResponse>>? GetCityItemPricesFromJsonAsync(string uniqueName, List<Location>? locations, List<int>? qualities)
+        public static async Task<List<MarketResponse>> GetCityItemPricesFromJsonAsync(string uniqueName, List<Location>? locations, List<int>? qualities)
         {
             if (string.IsNullOrEmpty(uniqueName))
             {
@@ -82,7 +82,7 @@ namespace StatisticsAnalysisTool.Avalonia.Common
             {
                 ConsoleManager.WriteLineForError(MethodBase.GetCurrentMethod()?.DeclaringType, e);
                 Log.Error(MethodBase.GetCurrentMethod()?.DeclaringType, e);
-                return null;
+                return new List<MarketResponse>();
             }
         }
 
